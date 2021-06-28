@@ -4,6 +4,18 @@
 
 @import "fonts/ravie.css";
 @import "fonts/verdana.css";
+:root {
+  --cor-titulo: #e90c0c;
+  --cor-corpo: #333;
+  --cor-destaque: #d027aa;
+  --cor-bg: #fff;
+  --cor-bg-recipiente-1: #f6f1b2;
+  --cor-bg-recipiente-2: #4599b2;
+  --cor-bg-cardapio: rgba(255, 255, 255, 0.2);
+  --cor-borda-recipiente: #d3d3d3;
+  --cor-borda-cardapio: #aac0ae;
+}
+
 html {
   min-height: 100vh;
 }
@@ -13,94 +25,147 @@ h1 {
 }
 
 body {
-  background-color: #fff;
+  background-color: var(--cor-bg);
   font-family: "Verdana", serif;
   min-height: 100vh;
+  margin: 0;
 }
 
 strong {
-  color: #d027aa;
+  color: var(--cor-destaque);
 }
 
 #recipiente {
-  background-image: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
-  border-left: 1px solid #d3d3d3;
-  border-right: 1px solid #d3d3d3;
-  margin-left: auto;
-  margin-right: auto;
-  width: 800px;
-  min-height: 100vh;
+  background-image: linear-gradient(to bottom, var(--cor-bg-recipiente-1), var(--cor-bg-recipiente-2) 80%);
+  border-left: 1px solid var(--cor-borda-recipiente);
+  border-right: 1px solid var(--cor-borda-recipiente);
 }
 
 #cardapio {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-top: 1px solid #aac0ae;
-  border-bottom: 1px solid #aac0ae;
-  border-left: 1px solid #aac0ae;
+  background-color: var(--cor-bg-cardapio);
+  border-top: 1px solid var(--cor-borda-cardapio);
+  border-bottom: 1px solid var(--cor-borda-cardapio);
+  border-left: 1px solid var(--cor-borda-cardapio);
 }
 
 #cardapio h3 {
   font-size: 18px;
-  color: #333;
+  color: var(--cor-corpo);
   margin-top: 30px;
 }
 
 #cardapio article {
   font-size: 14px;
-  color: #333;
+  color: var(--cor-corpo);
 }
 
 /* EXERCÍCIO 2: layout da página */
 
-#cabecalho-pagina {}
+#recipiente {
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 154px 1fr;
+  grid-template-rows: auto 1fr auto;
+}
 
-#lateral {}
+#cabecalho-pagina {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
 
-#cardapio {}
+#lateral {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
 
-#rodape-pagina {}
+#cardapio {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+#rodape-pagina {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4
+}
 
 /* EXERCÍCIO 3: cabeçalho da página */
 
-#cabecalho-pagina {}
+#cabecalho-pagina {
+  padding: 10px 10px 10px 0;
+}
 
 #cabecalho-pagina h1 {
   margin: 0;
   font-size: 36px;
-  color: #e90c0c;
+  color: var(--cor-titulo);
   font-weight: normal;
+  text-align: center;
 }
 
 #cabecalho-pagina h2 {
   margin: 0;
   font-size: 24px;
-  color: #333;
+  color: var(--cor-corpo);
   font-weight: normal;
+  text-align: end;
 }
 
 /* EXERCÍCIO 4: cada item do menu */
 
-article {}
+#cardapio {
+  padding: 0 20px;
+}
+
+article {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2em;
+}
 
 /* EXERCÍCIO 5: o rodapé */
 
-#rodape-pagina {}
+#rodape-pagina {
+  display: flex;
+  justify-content: flex-end;
+  padding: 46px 15px 25px 0;
+}
 
 /* EXERCÍCIO 6: lateral */
 
-#lateral {}
+#lateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 /* EXERCÍCIO 7: o ticket */
 
-#ticket {}
+#ticket {
+  position: fixed;
+  top: calc(50% - 84px / 2);
+  left: -89px;
+  transition: left 100ms ease-out;
+}
 
-#ticket:hover {}
+#ticket:hover {
+  left: 0;
+}
 
 /* EXERCÍCIO 8: deslocamento no siri e peixe */
 
-#siri {}
+#siri {
+  position: relative;
+  top: 17px;
+  left: -10px;
+}
 
-#peixe {}
+#peixe {
+  position: relative;
+  left: -44px;
+}
 
 /* EXERCÍCIO 9: bolhas - no HTML e no JS */
 
@@ -113,3 +178,17 @@ article {}
 
 /* coloque aqui a media query para sobrescrever o valor
    das custom properties para o modo escuro */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-titulo: #ff3a41;
+    --cor-corpo: #eee;
+    --cor-destaque: #fd38e8;
+    --cor-bg: #000;
+    --cor-bg-recipiente-1: #043f5b;
+    --cor-bg-recipiente-2: #0f0020;
+    --cor-bg-cardapio: rgba(0, 0, 0, 0.2);
+    --cor-borda-recipiente: #283039;
+    --cor-borda-cardapio: #3a5263;
+  }
+}
