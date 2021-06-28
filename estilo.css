@@ -1,9 +1,21 @@
 /* EXERCÍCIO 1: fontes */
+
 /* importá-las aqui... e definir as `font-family` da turminha... */
 
+@import "fonts/ravie.css";
+@import "fonts/verdana.css";
+html {
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: "Ravie", sans-serif;
+}
 
 body {
   background-color: #fff;
+  font-family: "Verdana", serif;
+  min-height: 100vh;
 }
 
 strong {
@@ -14,6 +26,10 @@ strong {
   background-image: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
   border-left: 1px solid #d3d3d3;
   border-right: 1px solid #d3d3d3;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  min-height: 100vh;
 }
 
 #cardapio {
@@ -34,38 +50,19 @@ strong {
   color: #333;
 }
 
-
 /* EXERCÍCIO 2: layout da página */
-#recipiente {
-  /* layout da página aqui */
-  /* ... */
-  /* ... */
-  /* ... */
-  /* ... */
-}
 
-#cabecalho-pagina {
+#cabecalho-pagina {}
 
-}
+#lateral {}
 
-#lateral {
+#cardapio {}
 
-}
-
-#cardapio {
-
-}
-
-#rodape-pagina {
-
-}
-
-
+#rodape-pagina {}
 
 /* EXERCÍCIO 3: cabeçalho da página */
-#cabecalho-pagina {
 
-}
+#cabecalho-pagina {}
 
 #cabecalho-pagina h1 {
   margin: 0;
@@ -82,41 +79,37 @@ strong {
 }
 
 /* EXERCÍCIO 4: cada item do menu */
-article {
-}
 
+article {}
 
 /* EXERCÍCIO 5: o rodapé */
-#rodape-pagina {
-}
+
+#rodape-pagina {}
 
 /* EXERCÍCIO 6: lateral */
-#lateral {
-}
 
+#lateral {}
 
 /* EXERCÍCIO 7: o ticket */
-#ticket {
-}
 
-#ticket:hover {
-}
+#ticket {}
 
+#ticket:hover {}
 
 /* EXERCÍCIO 8: deslocamento no siri e peixe */
-#siri {
-}
 
-#peixe {
-}
+#siri {}
+
+#peixe {}
 
 /* EXERCÍCIO 9: bolhas - no HTML e no JS */
+
 /* --- */
 
-
 /* EXERCÍCIO 10: modo escuro */
+
 /* no início deste arquivo (depois dos @import), coloque
    as custom properties */
+
 /* coloque aqui a media query para sobrescrever o valor
    das custom properties para o modo escuro */
-
